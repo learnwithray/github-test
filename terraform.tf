@@ -3,8 +3,10 @@ provider "google" {
   region  = "us-central1"
 }
 
-module "cloud_run_service" {
-  source     = "path_to_your_cloud_run_module" # Update this path to the location of your Cloud Run module
+
+module "cloud-run" {
+  source  = "GoogleCloudPlatform/cloud-run/google"
+  version = "0.16.2"
   name       = "your-service-name"
   image      = "gcr.io/your-gcp-project-id/your-image-name"
   region     = "us-central1"
